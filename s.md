@@ -91,3 +91,11 @@ python3 train_yawn_detection_CNN.py
 
 ---
 
+# ✅ You’re All Set 🚀
+
+This completes the setup:
+
+- ✅ Clone the repo  
+- ✅ Download & unzip the dataset  
+- ✅ Run the eye/yawn detection models  
+- ✅ Launch the Streamlit demo if needed
