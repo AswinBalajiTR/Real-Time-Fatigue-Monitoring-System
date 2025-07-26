@@ -59,7 +59,7 @@ unzip data.zip
 
 We have **different files for Eye Detection and Yawn Detection.**
 
-####  Eye Detection
+####  3a. Eye Detection
 
 ```bash
 # CNN Model
@@ -71,16 +71,12 @@ python3 train_eye_detection_CNN.py
 python3 train_eye_detection_ResNet18.py
 ```
 
-#### 😮 Yawn Detection
-
-##### ✅ Run the Main Yawn Detection Model
+#### 3b. Yawn Detection
 
 ```bash
 # CNN Model
 python3 train_yawn_detection_ResNet18.py
 ```
-
-##### ✅ Run the Baseline Yawn Detection Model
 
 ```bash
 # ResNet18 Model
