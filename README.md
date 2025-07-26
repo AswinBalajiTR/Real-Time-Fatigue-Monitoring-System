@@ -14,8 +14,8 @@ You can train and test **custom CNN models** and also use a **pretrained ResNet1
 Run the following commands to clone the repository and move into the project folder:
 
 ```bash
-git clone https://github.com/AswinBalajiTR/Final-Project-Group1
-cd Final-Project-Group1
+git clone https://github.com/AswinBalajiTR/Real-Time-Fatigue-Monitoring-System
+cd Real-Time-Fatigue-Monitoring-System
 ```
 
 ---
