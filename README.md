@@ -2,8 +2,8 @@
 
 This project implements live fatigue and drowsiness detection using **two modules:**
 
-- 👁️ **Eye Detection**
-- 😮 **Yawn Detection**
+- **Eye Detection**
+- **Yawn Detection**
 
 You can train and test **custom CNN models** and also use a **pretrained ResNet18 model** for eye detection.
 
