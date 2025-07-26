@@ -3,12 +3,10 @@
 A real-time drowsiness and fatigue detection system using live webcam input.  
 
 This project includes two main modules:
-- 👁️ **Eye Detection** – Detects if the driver’s eyes are closed
-- 😮 **Yawn Detection** – Detects if the driver is yawning
+-  **Eye Detection** – Detects if the driver’s eyes are closed
+-  **Yawn Detection** – Detects if the driver is yawning
 
-It supports both:
-- ✅ Custom CNN models
-- ✅ Pretrained ResNet18 models
+It also has **Grad-CAM** support for model explainability – Visualizes model attention through heatmaps to interpret predictions
 
 ---
 
