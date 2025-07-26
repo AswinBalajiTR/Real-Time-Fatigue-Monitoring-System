@@ -43,9 +43,9 @@ Download the dataset zip file from the following link:
 
 https://drive.google.com/file/d/1PSWj2w2LP6Zza125W4ZmCL7t8ozEnPlA/view
 
---
+---
 
-## 📦 Unzip the Dataset
+### 2) Unzip the Dataset
 
 After downloading, unzip the data file using this command:
 
@@ -55,21 +55,19 @@ unzip data.zip
 
 ---
 
-## 🚀 Run the Python Files
+### 3) Run the Train Python Files
 
 We have **different files for Eye Detection and Yawn Detection.**
 
----
+#### 👁️ Eye Detection
 
-### 👁️ Eye Detection
-
-#### ✅ Run the Custom CNN Model
+##### ✅ Run the Custom CNN Model
 
 ```bash
 python3 eye_detection.py
 ```
 
-#### ✅ Run the Pretrained ResNet18 Model
+##### ✅ Run the Pretrained ResNet18 Model
 
 ```bash
 python3 train_eye_detection_ResNet18.py
@@ -77,15 +75,15 @@ python3 train_eye_detection_ResNet18.py
 
 ---
 
-### 😮 Yawn Detection
+#### 😮 Yawn Detection
 
-#### ✅ Run the Main Yawn Detection Model
+##### ✅ Run the Main Yawn Detection Model
 
 ```bash
 python3 train_yawn_detection_ResNet18.py
 ```
 
-#### ✅ Run the Baseline Yawn Detection Model
+##### ✅ Run the Baseline Yawn Detection Model
 
 ```bash
 python3 train_yawn_detection_CNN.py
