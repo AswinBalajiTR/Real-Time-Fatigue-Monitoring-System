@@ -37,13 +37,13 @@ streamlit run Main.py
 
 To replicate the project or retrain the model, follow these steps:
 
-## ⬇️ Download the Dataset
+### 1) Download the Dataset
 
 Download the dataset zip file from the following link:
 
 https://drive.google.com/file/d/1PSWj2w2LP6Zza125W4ZmCL7t8ozEnPlA/view
 
----
+--
 
 ## 📦 Unzip the Dataset
 
