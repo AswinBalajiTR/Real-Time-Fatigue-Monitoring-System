@@ -171,7 +171,7 @@ class EarlyStopping:
         self.best_f1 = None
         self.early_stop = False
 
-    def __call__(self, f1, model, path="best_model_main.pth"):
+    def __call__(self, f1, model, path="yawn_detection_ResNet18.pth"):
         if self.best_f1 is None:
             self.best_f1 = f1
             self.save_checkpoint(model, path)
@@ -308,7 +308,7 @@ def main():
 
 
 def test_model():
-    model_path = "best_model_main.pth"
+    model_path = "yawn_detection_ResNet18.pth"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     test_transform = transforms.Compose([

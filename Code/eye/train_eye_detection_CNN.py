@@ -61,23 +61,51 @@ def load_data():
     return train_loader, test_loader, OUTPUTS_a, train_dataset.classes
 
 # ------------------ Model Definition ------------------ #
-def create_model(OUTPUTS_a):
-    model = models.resnet18(pretrained=True)
-    model.fc = nn.Linear(model.fc.in_features, OUTPUTS_a)  # Replace final layer
-    model = model.to(device)
+class EyeCNN(nn.Module):
+    def __init__(self, outputs):
+        super(EyeCNN, self).__init__()
+        self.model = nn.Sequential(
+            nn.Conv2d(3, 32, 3, padding=1),
+            nn.BatchNorm2d(32),
+            nn.ReLU(),
+            nn.MaxPool2d(2),
+            nn.Dropout(0.1),
 
+            nn.Conv2d(32, 64, 3, padding=1),
+            nn.BatchNorm2d(64),
+            nn.ReLU(),
+            nn.MaxPool2d(2),
+            nn.Dropout(0.17),
+
+            nn.Conv2d(64, 128, 3, padding=1),
+            nn.BatchNorm2d(128),
+            nn.ReLU(),
+            nn.MaxPool2d(2),
+
+            nn.Conv2d(128, 256, 3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(),
+            nn.AdaptiveAvgPool2d((1, 1)),
+        )
+        self.fc = nn.Linear(256, outputs)
+
+    def forward(self, x):
+        x = self.model(x)
+        x = x.view(x.size(0), -1)
+        return self.fc(x)
+
+def create_model(OUTPUTS_a):
+    model = EyeCNN(outputs=OUTPUTS_a).to(device)
     optimizer = optim.Adam(model.parameters(), lr=LR)
     scheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=2)
-
     class_weights = torch.tensor([1.2, 0.8]).to(device)
     criterion = nn.CrossEntropyLoss(weight=class_weights)
-
     return model, optimizer, scheduler, criterion
 
 # ------------------ Train and Test ------------------ #
 def train_and_test(train_loader, test_loader, model, optimizer, scheduler, criterion, classes):
     best_f1 = 0.0
-    save_path = "resnet18_eye_model_best.pt"
+    save_path = "eye_detection_CNN.pt"
 
     for epoch in range(EPOCHS):
         model.train()
@@ -111,8 +139,6 @@ def train_and_test(train_loader, test_loader, model, optimizer, scheduler, crite
         f1_macro = f1_score(all_labels, all_preds, average='macro')
         print(f"Epoch {epoch+1}: Test F1 Macro = {f1_macro:.4f}")
 
-        scheduler.step(f1_macro)
-
         if f1_macro > best_f1:
             best_f1 = f1_macro
             torch.save(model.state_dict(), save_path)
@@ -120,7 +146,7 @@ def train_and_test(train_loader, test_loader, model, optimizer, scheduler, crite
 
 def final_evaluation(model, test_loader, classes):
     print("\nFinal Test Classification Report (Best Model Loaded):")
-    model.load_state_dict(torch.load("resnet18_eye_model_best.pt"))
+    model.load_state_dict(torch.load("eye_detection_CNN.pt"))
     model.eval()
 
     all_preds = []

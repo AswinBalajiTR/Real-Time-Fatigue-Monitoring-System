@@ -120,7 +120,7 @@ def evaluate_model(model, test_dir):
 if __name__ == "__main__":
     BASE_DIR = os.getcwd()
     TEST_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "data", "test"))
-    MODEL_PATH = os.path.join(BASE_DIR, "resnet18_eye_model_best.pt")
+    MODEL_PATH = os.path.join(BASE_DIR, "eye_detection_ResNet18.pt")
 
     IMAGE_PATHS = [
         os.path.join(TEST_DIR, "Closed", "_72.jpg"),

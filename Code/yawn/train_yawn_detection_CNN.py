@@ -201,7 +201,7 @@ def main():
 
         if val_f1 > best_f1:
             best_f1 = val_f1
-            torch.save(model.state_dict(), "best_yawn_model_baseline.pth")
+            torch.save(model.state_dict(), "yawn_detection_CNN.pth")
             print("   Best model saved!")
 
     print("\n[INFO] Final Confusion Matrix:")
@@ -209,7 +209,7 @@ def main():
 
 # ---------------------------- Testing Script -------------------------------
 def test_model():
-    model_path = "best_yawn_model_baseline.pth"
+    model_path = "yawn_detection_CNN.pth"
 
     transform = transforms.Compose([
         transforms.ToPILImage(),

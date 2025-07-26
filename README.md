@@ -57,7 +57,7 @@ python3 eye_detection.py
 #### ✅ Run the Pretrained ResNet18 Model
 
 ```bash
-python3 eye_pretrained.py
+python3 train_eye_detection_ResNet18.py
 ```
 
 ---
@@ -67,13 +67,13 @@ python3 eye_pretrained.py
 #### ✅ Run the Main Yawn Detection Model
 
 ```bash
-python3 yawn_detection_main.py
+python3 train_yawn_detection_ResNet18.py
 ```
 
 #### ✅ Run the Baseline Yawn Detection Model
 
 ```bash
-python3 yawn_detection_baseline.py
+python3 train_yawn_detection_CNN.py
 ```
 
 ---
