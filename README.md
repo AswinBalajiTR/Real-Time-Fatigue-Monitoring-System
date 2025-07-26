@@ -1,8 +1,6 @@
-# Deep-Learning-Project
+# Real-Time Fatigue Monitoring System 
 
-# 💤 Driver Drowsiness Detection (Eye + Yawn Detection)
-
-This project implements driver drowsiness detection using **two modules:**
+This project implements live fatigue and drowsiness detection using **two modules:**
 
 - 👁️ **Eye Detection**
 - 😮 **Yawn Detection**
