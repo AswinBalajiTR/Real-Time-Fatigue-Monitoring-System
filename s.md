@@ -30,3 +30,72 @@ pip install -r requirements.txt
 # 3. Launch the app
 streamlit run Main.py
 ```
+
+---
+
+## Project Retraining
+
+To replicate the project or retrain the model, follow these steps:
+
+## ⬇️ Download the Dataset
+
+Download the dataset zip file from the following link:
+
+https://drive.google.com/file/d/1PSWj2w2LP6Zza125W4ZmCL7t8ozEnPlA/view
+
+---
+
+## 📦 Unzip the Dataset
+
+After downloading, unzip the data file using this command:
+
+```bash
+unzip data.zip
+```
+
+---
+
+## 🚀 Run the Python Files
+
+We have **different files for Eye Detection and Yawn Detection.**
+
+---
+
+### 👁️ Eye Detection
+
+#### ✅ Run the Custom CNN Model
+
+```bash
+python3 eye_detection.py
+```
+
+#### ✅ Run the Pretrained ResNet18 Model
+
+```bash
+python3 train_eye_detection_ResNet18.py
+```
+
+---
+
+### 😮 Yawn Detection
+
+#### ✅ Run the Main Yawn Detection Model
+
+```bash
+python3 train_yawn_detection_ResNet18.py
+```
+
+#### ✅ Run the Baseline Yawn Detection Model
+
+```bash
+python3 train_yawn_detection_CNN.py
+```
+
+---
+
+## 🖼️ View the Model Metrics
+
+✅ After running any of the above files, you will be able to see **the performance metrics** of each model in your terminal (e.g., Accuracy, Precision, Recall, F1-Score).
+
+---
+
