@@ -18,6 +18,7 @@ import matplotlib.cm as cm
 DEVICE = torch.device("cpu")
 EYE_CLASSES = ['Closed', 'Open']
 YAWN_CLASSES = ['no_yawn', 'yawn']
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # This is the /Code folder
 
 # ----------------- Grad-CAM Overlay -----------------
 def overlay_gradcam_on_frame(crop, tensor_input, model, class_idx, is_resnet=False):
@@ -84,23 +85,23 @@ def run_drowsiness_app():
         if task == "eye":
             if model_type == "CNN":
                 model = EyeCNN(2)
-                path = "eye/eye_detection_CNN.pt"
+                path = os.path.join(BASE_DIR, "eye", "eye_detection_CNN.pt")
                 size = 100
                 norm = transforms.Normalize([0.5]*3, [0.5]*3)
             else:
                 model = create_resnet18_eye(2)
-                path = "eye/eye_detection_ResNet18.pt"
+                path = os.path.join(BASE_DIR, "eye", "eye_detection_ResNet18.pt")
                 size = 224
                 norm = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         else:
             if model_type == "CNN":
                 model = CNNBinaryClassifier()
-                path = "yawn/yawn_detection_CNN.pth"
+                path = os.path.join(BASE_DIR, "yawn", "yawn_detection_CNN.pth")
                 size = 100
                 norm = transforms.Normalize([0.5]*3, [0.5]*3)
             else:
                 model = ResNet18BinaryClassifier()
-                path = "yawn/yawn_detection_ResNet18.pth"
+                path = os.path.join(BASE_DIR, "yawn", "yawn_detection_ResNet18.pth")
                 size = 224
                 norm = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         model.load_state_dict(torch.load(path, map_location=DEVICE))
