@@ -1,8 +1,6 @@
-# Deep-Learning-Project
+# Real-Time Fatigue Monitoring System 
 
-# 💤 Driver Drowsiness Detection (Eye + Yawn Detection)
-
-This project implements driver drowsiness detection using **two modules:**
+This project implements live fatigue and drowsiness detection using **two modules:**
 
 - 👁️ **Eye Detection**
 - 😮 **Yawn Detection**
@@ -16,8 +14,8 @@ You can train and test **custom CNN models** and also use a **pretrained ResNet1
 Run the following commands to clone the repository and move into the project folder:
 
 ```bash
-git clone https://github.com/AswinBalajiTR/Final-Project-Group1
-cd Final-Project-Group1
+git clone https://github.com/AswinBalajiTR/Real-Time-Fatigue-Monitoring-System
+cd Real-Time-Fatigue-Monitoring-System
 ```
 
 ---
