@@ -14,15 +14,20 @@ It supports both:
 
 ## 🚀 Live Demo (Streamlit App)
 
-To run the **real-time demo app**, follow these steps:
+To run the **real-time demo**, follow these steps:
 
 ```bash
 # 1. Clone the repository
 git clone https://github.com/AswinBalajiTR/Real-Time-Fatigue-Monitoring-System
 cd Real-Time-Fatigue-Monitoring-System
+```
+
+```bash
 
 # 2. Install all dependencies
 pip install -r requirements.txt
-
+```
+```bash
 # 3. Launch the app
 streamlit run Main.py
+```
