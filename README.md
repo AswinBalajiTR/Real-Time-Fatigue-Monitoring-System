@@ -1,26 +1,43 @@
-# Real-Time Fatigue Monitoring System 
+# Real-Time Fatigue Monitoring System
 
-This project implements live fatigue and drowsiness detection using **two modules:**
+A real-time drowsiness and fatigue detection system using live webcam input.  
 
-- **Eye Detection**
-- **Yawn Detection**
+This project includes two main modules:
+- 👁️ **Eye Detection** – Detects if the driver’s eyes are closed
+- 😮 **Yawn Detection** – Detects if the driver is yawning
 
-You can train and test **custom CNN models** and also use a **pretrained ResNet18 model** for eye detection.
+It supports both:
+- ✅ Custom CNN models
+- ✅ Pretrained ResNet18 models
 
 ---
 
-## 📥 Clone the GitHub Repository
+## 🚀 Live Demo (Streamlit App)
 
-Run the following commands to clone the repository and move into the project folder:
+To run the **real-time demo**, follow these steps:
 
 ```bash
+# 1. Clone the repository
 git clone https://github.com/AswinBalajiTR/Real-Time-Fatigue-Monitoring-System
-cd Real-Time-Fatigue-Monitoring-System
+```
+
+```bash
+# 2. Install all dependencies
+pip install -r requirements.txt
+```
+
+```bash
+# 3. Launch the app
+streamlit run Main.py
 ```
 
 ---
 
-## ⬇️ Download the Dataset
+## Project Retraining
+
+To replicate the project or retrain the model, follow these steps:
+
+### 1) Download the Dataset
 
 Download the dataset zip file from the following link:
 
@@ -28,7 +45,7 @@ https://drive.google.com/file/d/1PSWj2w2LP6Zza125W4ZmCL7t8ozEnPlA/view
 
 ---
 
-## 📦 Unzip the Dataset
+### 2) Unzip the Dataset
 
 After downloading, unzip the data file using this command:
 
@@ -38,39 +55,31 @@ unzip data.zip
 
 ---
 
-## 🚀 Run the Python Files
+### 3) Run the Train Python Files
 
 We have **different files for Eye Detection and Yawn Detection.**
 
----
-
-### 👁️ Eye Detection
-
-#### ✅ Run the Custom CNN Model
+####  3a. Eye Detection
 
 ```bash
-python3 eye_detection.py
+# CNN Model
+python3 train_eye_detection_CNN.py
 ```
 
-#### ✅ Run the Pretrained ResNet18 Model
-
 ```bash
+# ResNet18 Model
 python3 train_eye_detection_ResNet18.py
 ```
 
----
-
-### 😮 Yawn Detection
-
-#### ✅ Run the Main Yawn Detection Model
+#### 3b. Yawn Detection
 
 ```bash
+# CNN Model
 python3 train_yawn_detection_ResNet18.py
 ```
 
-#### ✅ Run the Baseline Yawn Detection Model
-
 ```bash
+# ResNet18 Model
 python3 train_yawn_detection_CNN.py
 ```
 
@@ -82,16 +91,6 @@ python3 train_yawn_detection_CNN.py
 
 ---
 
-## 🎬 Demo the Project (Streamlit App)
-
-To run the **demo app** using Streamlit, use the following command:
-
-```bash
-streamlit run Main.py
-```
-
----
-
 # ✅ You’re All Set 🚀
 
 This completes the setup:
@@ -100,5 +99,3 @@ This completes the setup:
 - ✅ Download & unzip the dataset  
 - ✅ Run the eye/yawn detection models  
 - ✅ Launch the Streamlit demo if needed
-
-For any questions, open a GitHub issue or contact the repo maintainer.
